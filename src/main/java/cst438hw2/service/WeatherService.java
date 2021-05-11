@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import cst438hw2.domain.TempAndTime;
 
+//WeatherService calls the WeatherMap API and retrieves temperature and time data in JSON format
 @Service
 public class WeatherService {
 	
@@ -38,6 +39,7 @@ public class WeatherService {
 		double temp = json.get("main").get("temp").asDouble();
 		long time = json.get("dt").asLong();
 		int timezone = json.get("timezone").asInt();
+		
 		return new TempAndTime(temp, time, timezone);
 		}	
 }
