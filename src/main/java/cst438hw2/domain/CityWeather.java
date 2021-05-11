@@ -35,7 +35,6 @@ public class CityWeather {
 		return "CityWeather [temp=" + temp + ", condition=" + condition + "]";
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -54,5 +53,4 @@ public class CityWeather {
 			return false;
 		return true;
 	}
-
 }

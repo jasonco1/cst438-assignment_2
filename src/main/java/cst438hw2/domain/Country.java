@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Table(name="country")
 public class Country {
 
-
 	@Id
 	private String code;
 	private String name;
@@ -32,7 +31,6 @@ public class Country {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -60,6 +58,4 @@ public class Country {
 	public String toString() {
 		return "Country [code=" + code + ", name=" + name + "]";
 	}
-
-
 }

@@ -5,11 +5,10 @@ public class TempAndTime {
 	public long time;
 	public int timezone;
 	
+	//Helper class to return temperature, time, and timezone data retrieved by WeatherService
 	public TempAndTime(double temp, long time, int timezone){
 		this.temp = temp;
 		this.time = time;
 		this.timezone = timezone;
 	}
-
-
 }

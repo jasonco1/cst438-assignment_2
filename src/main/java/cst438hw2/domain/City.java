@@ -17,8 +17,7 @@ public class City {
 	private String district;
 	private int population;
 	
-	// Transient marks extra field in an Entity class
-	//  that is not read/written to the database.
+//Transient annotation marks fields which are not added/retrieved from database
 	@Transient
 	CityWeather weather;
 	
@@ -84,7 +83,6 @@ public class City {
 		this.country = country;
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -126,7 +124,4 @@ public class City {
 		return "City [ID=" + ID + ", name=" + name + ", district=" + district + ", population=" + population
 				+ ", weather=" + weather + ", country=" + country + "]";
 	}
-	
-	
-
 }

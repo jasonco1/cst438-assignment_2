@@ -11,11 +11,7 @@ import cst438hw2.domain.CityRepository;
 import cst438hw2.domain.CountryRepository;
 import cst438hw2.service.CityService;
  
-//Create a CityController class that handles http get request. 
-//The @PathVariable annotation tells spring to parse the URL and 
-//put the text that occurs after /cities/ into the cityName parameter.
-//name,countryCode,countryName.district,population.temp(f),time
-//id,name,countrycode,countryname,district,poplocalweather,localtime
+//The CityController class handles HTTP routing requests. URL is: localhost:8080/cities/city 
 @Controller
 public class CityController {
 	
@@ -32,7 +28,11 @@ public class CityController {
 	public String getCityInfo(@PathVariable("city") String cityName, 
                                Model model) {
       CityInfo cityInfo = cityService.getCityInfo(cityName);
-           
+      
+      //Consider simply adding the CityInfo object to the model without adding the individual
+      //parameters. You can add the individual parameters of CityInfo via the HTML Template.
+      //This would be cleaner and DRYer.
+      //model.addAttribute("cityInfo", cityInfo);
       model.addAttribute("ID", cityInfo.city.getID());
       model.addAttribute("name", cityName);
       model.addAttribute("countryCode", cityInfo.country.getCode());
